@@ -4,8 +4,11 @@
 % !BIB program = biber
 %% 
 %% The above lines help editors like TeXstudio to automatically choose the right tools
-%% to compile your LaTeX source file. If your tool does not support these magic comments,
-%% you will need to make appropriate manual choices.
+%% to compile your LaTeX source file. If you want to use packages like minted that need
+%% to execute shell commands, you may need to change the TeX program above to, e.g.
+%% txs:///xelatex/[-shell-escape]
+%% If your tool does not support these magic comments, you will need to make appropriate
+%% manual choices.
 %% 
 %% You can safely use "pdflatex" instead of "xelatex" if you prefer the pdfLaTeX toolchain.
 %% However, pdfLaTeX will not be able to deliver the professional font experience that you
@@ -151,6 +154,7 @@
 %% a package `biblatex', you would use the command `\usepackage{biblatex}'.
 %% 
 
+%\usepackage{minted} %% alternative package for code listings (also see notice about TeX program above!)
 \usepackage{csquotes}
 \usepackage[backend=biber,citestyle=numeric,sortcites=true,maxcitenames=2,style=ACM-Reference-Format]{biblatex}
 \setcounter{biburlnumpenalty}{100} %% reducing biburl* penalties typically improves URL placement in bibliography

@@ -11,7 +11,7 @@ It should primarily show you some basic \LaTeX\ tricks.
 For instance, \autoref{sec:introduction:motivation} references to your motivation.
 You can also embed figures, tables, etc.\ in your work.
 \autoref{fig:learningcenter} is an example for a figure (i.e.\ photos, diagrams, and other artwork).
-Note that figures (just like tables, see \autoref{tab:nicetable}) are floating elements.
+Note that figures (just like tables and code listings, see \autoref{tab:nicetable} and \autoref{lst:examplecode}) are floating elements.
 They are either placed at the top or bottom of a page (or sometimes stand on their own page), but not in between your text.
 You can influence their placement with the placement modifiers ``t'', ``b'', and ``p''.
 Bottom placement (``b'') is sometimes more tricky, as \LaTeX\ does not consider this nice in some situations.
@@ -22,13 +22,15 @@ Since you do not place figures/tables in between your running text, you always n
 \centering
 \includegraphics[width=\linewidth]{images/jku_learningcenter}
 \caption{
-    A figure. Be aware that figures have their caption below the artwork
+    A figure. Be aware that figures have their caption below the artwork.
+    Captions may span multiple lines
 }\label{fig:learningcenter}
 \end{figure}
 \begin{table}[b]
 \centering
 \caption{
-    A table. Be aware that tables have their caption above the table
+    A table. Be aware that tables have their caption above the table.
+    Captions may span multiple lines
 }\label{tab:nicetable}
 \begin{tabularx}{\linewidth}{l>{\raggedright\arraybackslash}X}
 \toprule
@@ -43,6 +45,22 @@ Since you do not place figures/tables in between your running text, you always n
 \bottomrule
 \end{tabularx}
 \end{table}
+\begin{lstlisting}[language=c,caption={A code listing. Code listings usually have their caption below the code. Captions may span multiple lines},label=lst:examplecode,float]
+for (int i = 0; i < 100; ++i) {
+    printf("%3d\n", i);
+}
+\end{lstlisting}
+%\begin{listing}
+%\begin{minted}{c}
+%for (int i = 0; i < 100; ++i) {
+%    printf("%3d\n", i);
+%}
+%\end{minted}
+%\caption{
+%    A code listing. Code listings usually have their caption below the code.
+%    Captions may span multiple lines
+%}\label{lst:examplecode}
+%\end{listing}
 
 You will often reference and quote other works.
 The source of these citations needs to be marked with the \string\cite\{\}\ command.
@@ -57,8 +75,7 @@ These are a few examples:
 \begin{quote}
 \emph{Ultimately, the high fluctuations in the hidden service directory were caused by a mixture of several issues. First the changed voting behavior of three directory authorities reduced the amount of obtainable votes to six. If any of the remaining six relays went offline -- which tends to happen during ongoing DOS attacks -- relays needed to obtain five out of five available votes. So any individual measurement failure regarding either bandwidth or uptime led to a withdrawn HSDir flag.}
 \end{quote}
-\item You sometimes also paraphrase from multiple sources. For that purpose, the \string\cite\ command accepts a list of multiple comma-separated references. Do not add spaces inbetween them. Various analyses of the Tor network have been performed recently~\cite{bib:2021-hoeller-foci,bib:2021-hoeller-iiwas}. 
+\item You sometimes also paraphrase from multiple sources. For that purpose, the \string\cite\ command accepts a list of multiple comma-separated references. Do not add spaces in between them. Various analyses of the Tor network have been performed recently~\cite{bib:2021-hoeller-foci,bib:2021-hoeller-iiwas}. 
 \end{itemize}
-
 %% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
